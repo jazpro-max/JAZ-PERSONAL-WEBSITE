@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Josephat Anyorekire - Software Engineering student, developer and technology enthusiast." />
+  <title>Josephat Anyorekire | Software Engineer</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="header">
+    <nav class="nav container">
+      <a class="logo" href="#home">JA<span>.</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">SOFTWARE ENGINEERING • TECHNOLOGY • BUILDING</p>
+          <h1>Hi, I'm <span>Josephat</span>.<br />I build things with code.</h1>
+          <p class="hero-description">
+            I'm a Software Engineering student and technology enthusiast focused on
+            learning, building practical projects, and growing into a professional developer.
+          </p>
+          <div class="hero-buttons">
+            <a class="btn primary" href="#projects">View My Projects</a>
+            <a class="btn secondary" href="#contact">Contact Me</a>
+          </div>
+          <div class="socials">
+            <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:your-email@example.com">Email</a>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-circle">JA</div>
+          <h2>Josephat Anyorekire</h2>
+          <p>Software Engineering Student</p>
+          <div class="status"><span></span> Available for learning & projects</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">ABOUT ME</p>
+          <h2>Learning today. Building for tomorrow.</h2>
+        </div>
+        <div class="about-grid">
+          <div>
+            <p>
+              I'm Josephat Anyorekire, a Software Engineering student with a strong
+              interest in programming, web development, technology and problem solving.
+            </p>
+            <p>
+              I enjoy taking ideas and turning them into practical projects while
+              continuously improving my understanding of programming fundamentals,
+              databases, software design and modern web technologies.
+            </p>
+          </div>
+          <div class="info-box">
+            <div><strong>Field</strong><span>Software Engineering</span></div>
+            <div><strong>Focus</strong><span>Web Development & Programming</span></div>
+            <div><strong>Based</strong><span>Kampala, Uganda</span></div>
+            <div><strong>Learning</strong><span>C • Python • JavaScript • Node.js</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">MY SKILLS</p>
+          <h2>Technologies I'm learning</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-card"><div class="icon">C</div><h3>C Programming</h3><p>Programming fundamentals, logic, functions, loops and problem solving.</p></div>
+          <div class="skill-card"><div class="icon">Py</div><h3>Python</h3><p>Learning Python syntax, programming concepts and practical automation.</p></div>
+          <div class="skill-card"><div class="icon">&lt;/&gt;</div><h3>HTML & CSS</h3><p>Building responsive and accessible web interfaces.</p></div>
+          <div class="skill-card"><div class="icon">JS</div><h3>JavaScript</h3><p>Interactive web applications and modern web programming.</p></div>
+          <div class="skill-card"><div class="icon">N</div><h3>Node.js</h3><p>Creating backend applications and REST-style APIs with Express.</p></div>
+          <div class="skill-card"><div class="icon">DB</div><h3>Databases</h3><p>Learning relational databases, SQL and PostgreSQL.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">PROJECTS</p>
+          <h2>Things I'm building</h2>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-top"><span>01</span><span class="tag">Web App</span></div>
+            <h3>Personal Portfolio</h3>
+            <p>A responsive personal website built with HTML, CSS, JavaScript, Node.js and Express.</p>
+            <div class="tech">HTML • CSS • JS • Express</div>
+          </article>
+          <article class="project-card">
+            <div class="project-top"><span>02</span><span class="tag">Full Stack</span></div>
+            <h3>Investment Web Project</h3>
+            <p>A learning project exploring authentication, APIs, PostgreSQL and full-stack development.</p>
+            <div class="tech">Node.js • Express • PostgreSQL</div>
+          </article>
+          <article class="project-card">
+            <div class="project-top"><span>03</span><span class="tag">Learning</span></div>
+            <h3>Programming Projects</h3>
+            <p>Small projects and exercises designed to strengthen algorithms, problem solving and programming fundamentals.</p>
+            <div class="tech">C • Python • JavaScript</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">GET IN TOUCH</p>
+          <h2>Let's connect.</h2>
+          <p class="contact-text">
+            Have a project idea, collaboration opportunity, or simply want to connect?
+            Send me a message.
+          </p>
+          <div class="contact-details">
+            <p><strong>Email:</strong> your-email@example.com</p>
+            <p><strong>Location:</strong> Kampala, Uganda</p>
+          </div>
+        </div>
+
+        <form id="contactForm" class="contact-form">
+          <label>Name<input type="text" name="name" required placeholder="Your name" /></label>
+          <label>Email<input type="email" name="email" required placeholder="your@email.com" /></label>
+          <label>Message<textarea name="message" rows="5" required placeholder="Write your message..."></textarea></label>
+          <button class="btn primary" type="submit">Send Message</button>
+          <p id="formMessage" class="form-message"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Josephat Anyorekire. All rights reserved.</p>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
