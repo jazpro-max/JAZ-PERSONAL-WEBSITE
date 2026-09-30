@@ -18,7 +18,24 @@ h1{font-size:1.4rem;margin:0 0 4px}p.s{margin:0 0 14px;color:var(--mut);font-siz
 .L{background:#f2cfd8}.P{background:#cfe8d8}.R{background:#cfdcf2}.F{background:#f6dfb4}.J{background:#d5efc9}.X{background:#e0d4f2}.T{background:#f8d6c4}.B{background:#c8e6ea}.M{background:#e6e8e3}.S{background:#c9ccd6}
 .key{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 8px;font-size:.75rem}.key span{padding:3px 8px;border-radius:6px;color:#1d2420}
 .n{font-size:.8rem;color:var(--mut);line-height:1.5}
+  .home-button {
+    display: inline-block;
+    padding: 12px 22px;
+    background: #5ee7d2;
+    color: #07111f;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 10px;
+    margin: 20px 0;
+    transition: 0.3s;
+}
+
+.home-button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
 </style></head><body>
+  <a href="/index.html" class="home-button">← Back to Home</a>
 <h1>My weekly plan</h1>
 <p class="s">Repeats every week. Sleep 01:00 to 07:00. Every lecture is preceded by reading and practice.</p>
 <div class="tabs" id="tabs"></div><div id="day"></div>
