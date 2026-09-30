@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My Weekly Plan</title>
+<style>
+:root{--bg:#f6f7f4;--fg:#1d2420;--mut:#5d675f;--line:#d9ddd6;--card:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171b18;--fg:#e9ede8;--mut:#9aa59c;--line:#333a35;--card:#1f2521}}
+:root[data-theme="dark"]{--bg:#171b18;--fg:#e9ede8;--mut:#9aa59c;--line:#333a35;--card:#1f2521}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:20px 14px;max-width:720px;margin:auto}
+h1{font-size:1.4rem;margin:0 0 4px}p.s{margin:0 0 14px;color:var(--mut);font-size:.9rem}
+.tabs{display:flex;gap:6px;overflow-x:auto;margin-bottom:14px}
+.tabs button{border:1px solid var(--line);background:var(--card);color:var(--fg);padding:8px 12px;border-radius:8px;font-size:.85rem;cursor:pointer}
+.tabs button.on{background:#2f6b4f;color:#fff;border-color:#2f6b4f}
+.r{display:flex;gap:10px;margin-bottom:5px}
+.tm{width:92px;flex:none;font-size:.78rem;color:var(--mut);padding-top:9px}
+.bl{flex:1;border-radius:8px;padding:8px 10px;font-size:.88rem;color:#1d2420;border-left:5px solid rgba(0,0,0,.25)}
+.L{background:#f2cfd8}.P{background:#cfe8d8}.R{background:#cfdcf2}.F{background:#f6dfb4}.J{background:#d5efc9}.X{background:#e0d4f2}.T{background:#f8d6c4}.B{background:#c8e6ea}.M{background:#e6e8e3}.S{background:#c9ccd6}
+.key{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 8px;font-size:.75rem}.key span{padding:3px 8px;border-radius:6px;color:#1d2420}
+.n{font-size:.8rem;color:var(--mut);line-height:1.5}
+</style></head><body>
+<h1>My weekly plan</h1>
+<p class="s">Repeats every week. Sleep 01:00 to 07:00. Every lecture is preceded by reading and practice.</p>
+<div class="tabs" id="tabs"></div><div id="day"></div>
+<div class="key"><span class="L">Lecture</span><span class="P">Prep before lecture</span><span class="R">Recap</span><span class="F">Forex</span><span class="J">Jogging</span><span class="T">TikTok</span><span class="X">Relax / social</span><span class="B">Side project</span></div>
+<p class="n">Afternoons are assumed free after 13:00 and Tuesday and Friday 08:00 to 10:00 are used for prep. If you have more classes, tell Claude and the plan will be adjusted. Forex markets are closed on weekends, so Saturday is for review only.</p>
+<script>
+const NIGHT=[["21:30","22:15","T","TikTok (use a timer)"],["22:15","23:30","X","Relax: music, series, friends"],["23:30","00:30","B","Side project or marketable skill"],["00:30","01:00","M","Plan tomorrow, pack bag, phone away"],["01:00","07:00","S","Sleep"]];
+const W=["07:00","08:00","M","Wake, get ready, travel"];
+const D={
+Monday:[W,["08:00","09:00","L","BSE 1106 Problem Solving and Programming (LLT 6A)"],["09:00","10:00","R","Recap BSE 1106, preview CSC 1100 slides"],["10:00","12:00","L","CSC 1100 Computer Literacy (LLT 6B)"],["12:00","13:00","M","Lunch and rest"],["13:00","15:30","P","Practice coding exercises for tomorrow's BSE 1106 (3 hours)"],["15:30","17:00","F","Forex: analysis, then trade with strict risk limits"],["17:00","18:00","J","Jogging"],["18:00","19:30","M","Dinner, shower, family"],["19:30","21:30","P","Read and practice IST 1101 for Wednesday 08:00"]],
+Tuesday:[W,["08:00","10:00","P","Final practice and preview for BSE 1106"],["10:00","13:00","L","BSE 1106 Problem Solving and Programming (LLT 2A)"],["13:00","14:00","M","Lunch and rest"],["14:00","15:00","R","Recap BSE 1106, fix errors in your code"],["15:00","16:30","F","Forex session"],["16:30","18:00","X","Friends, errands, free time"],["18:00","19:00","M","Dinner"],["19:00","20:00","P","Preview CSC 1100 lab for Wednesday 11:00"],["20:00","21:30","P","Practice BSE 1107 maths problems for Thursday 08:00"]],
+Wednesday:[W,["08:00","11:00","L","IST 1101 Foundations of Information Systems (LLT 3B)"],["11:00","13:00","L","CSC 1100 Computer Literacy, Lab 1"],["13:00","14:00","M","Lunch and rest"],["14:00","15:30","R","Recap IST 1101 and lab notes"],["15:30","17:00","F","Forex session"],["17:00","18:00","J","Jogging"],["18:00","19:30","M","Dinner, shower"],["19:30","21:30","P","BSE 1107 worked problems, then preview BSE 1108"]],
+Thursday:[W,["08:00","11:00","L","BSE 1107 Mathematics for Software Engineers (LLT 2B)"],["11:00","13:00","L","BSE 1108 Technical Analysis and Design (LLT 2B)"],["13:00","14:00","M","Lunch and rest"],["14:00","15:30","R","Recap maths and BSE 1108 notes"],["15:30","17:00","F","Forex session"],["17:00","18:00","X","Friends, errands, free time"],["18:00","19:30","M","Dinner"],["19:30","21:30","P","Read and practice BSE 1108 for Friday 10:00"]],
+Friday:[W,["08:00","10:00","P","Preview BSE 1108, tidy the week's notes"],["10:00","12:00","L","BSE 1108 Technical Analysis and Design (LLT 5B)"],["12:00","13:00","M","Lunch and rest"],["13:00","14:30","R","Catch up on the weakest topic of the week"],["14:30","16:00","F","Forex: review your trade journal, no rush to trade"],["16:00","17:00","J","Jogging"],["17:00","21:30","X","Friends, social life, dinner out"]],
+Saturday:[W,["07:30","08:30","J","Long jog"],["08:30","10:00","M","Breakfast and chores"],["10:00","12:30","R","Practice questions for your two weakest units"],["12:30","13:30","M","Lunch"],["13:30","15:30","B","Build a portfolio project or learn a skill people pay for"],["15:30","17:00","F","Forex: weekly review and plan (markets closed)"],["17:00","21:30","X","Social time, family, fun"]],
+Sunday:[W,["08:00","09:00","M","Breakfast"],["09:00","16:00","X","Family, faith, rest, free time"],["16:00","17:00","J","Easy jog"],["17:00","19:00","M","Dinner, shower, iron clothes"],["19:00","21:30","P","Read and practice BSE 1106 and CSC 1100 for Monday"]]
+};
+const names=Object.keys(D),tabs=document.getElementById("tabs"),box=document.getElementById("day");
+function show(n){[...tabs.children].forEach(b=>b.classList.toggle("on",b.textContent===n));
+box.innerHTML=D[n].concat(NIGHT).map(x=>`<div class="r"><div class="tm">${x[0]} - ${x[1]}</div><div class="bl ${x[2]}">${x[3]}</div></div>`).join("");}
+names.forEach(n=>{const b=document.createElement("button");b.textContent=n;b.onclick=()=>show(n);tabs.appendChild(b)});
+show(names[(new Date().getDay()+6)%7]);
+</script></body></html>
